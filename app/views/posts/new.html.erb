@@ -1,6 +1,9 @@
 <h1>New Post</h1>
 
-<%= form_for @post do |p| %>
+<%= form_for @post, html: { multipart: true } do |p| %>
+    <%= p.label :image %>
+    <%= p.file_field :image %>
+  <br>
   <%= p.label :description %>
   <%= p.text_area :description %>
   <br>
