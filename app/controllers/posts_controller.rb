@@ -4,9 +4,11 @@ class PostsController < ApplicationController
   end
 
   def index
+    @posts = Post.all
   end
 
   def show
+    @post = Post.find(params:[id])
   end
 
   def create
@@ -23,5 +25,5 @@ class PostsController < ApplicationController
   private
   def allow_post
     params.require(:post).permit(:image, :description)
-  end  
+  end
 end
